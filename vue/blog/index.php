@@ -25,8 +25,11 @@ include 'inc/header.php';
           ?>
     </div>
   </div>
+  <br/>
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12 text-center">
+      <a href="index.php">Page 1</a>
+      <a href="index.php?page=2">Page 2</a>
     </div>
   </div>
 </div>
