@@ -5,6 +5,7 @@ include 'inc/header.php';
   <div clas="row">
     <div class="col-xs-12">
       <h2 class="centered"><a href="../../blog.php">Retour à l'accueil</a></h2>
+      <h2 class="text-center">Ajouter un commentaire : </h2>
         <!-- Formulaire d'ajout de commentaires -->
         <div class="well">
           <div class="formulaire">

@@ -1,7 +1,10 @@
 <?php
-include 'Connexion_BDD.php';
+function send_commentaires(){
 
-$req = $bdd->prepare('INSERT INTO commentaires (auteur, contenu) VALUES (?, ?)');
-$req->execute(array($_POST['auteur'], $_POST['message']));
+  global $bdd;
 
-header('Location: ../vue/blog/commentaires.php');
+  $req = $bdd->prepare('INSERT INTO commentaires (auteur, contenu) VALUES (?, ?)');
+  $req->execute(array($_POST['auteur'], $_POST['message']));
+
+  return $req;
+}
