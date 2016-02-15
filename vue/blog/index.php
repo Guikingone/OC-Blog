@@ -17,7 +17,7 @@ include 'inc/header.php';
             <!-- Affichage du contenu -->
             <p class="contenu"><?php echo $billet['contenu']; ?>
             <br />
-              <em><a href="vue/blog/commentaires.php?billet=<?php echo $billet['id']; ?>">Commenter</a></em>
+              <em><a href="commentaires.php?billet=<?php echo $billet['id']; ?>">Commenter</a></em>
             </p>
           </div>
           <?php

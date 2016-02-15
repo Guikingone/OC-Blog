@@ -14,3 +14,15 @@ function get_articles($offset, $limit){
 
   return $billets;
 }
+
+function get_articles_by_id(){
+
+  global $bdd;
+
+  $req = $bdd->prepare('SELECT id, titre, contenu, auteur, DATE_FORMAT(date_publication
+  , \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation FROM article WHERE id = ?');
+  $req->execute(array($_GET['billet']));
+  $billetsID = $req->fetch();
+
+  return $billetsID;
+}
