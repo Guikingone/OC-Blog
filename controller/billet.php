@@ -1,6 +1,7 @@
 <?php
 include_once 'modele/get_articles.php';
 $billets = get_articles(0, 25);
+$pagination = get_pagination();
 
 foreach($billets as $key => $billet){
     $billets[$key]['titre'] = htmlspecialchars($billet['titre']);
