@@ -33,7 +33,6 @@ function get_articles_by_id(){
 function get_pagination(){
 
   global $bdd;
-  $nbrArticlesPrPages = 5;
 
   $req = $bdd->prepare('SELECT COUNT(*) AS nb_articles FROM article');
   $req->execute();

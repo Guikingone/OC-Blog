@@ -28,6 +28,18 @@ include 'inc/header.php';
   <br/>
   <div class="row">
     <div class="col-lg-12 text-center">
+      <?php
+      for($i = 0; $i<=$nbPages; $i++)
+      {
+        echo '<a href="index.php?page=$i"' . $i . '</a>';
+      }
+
+      if(isset($_GET['page'])){
+        $cPage = $_GET['p'];
+      }else{
+        $cPage = 0;
+      }
+      ?>
     </div>
   </div>
 </div>

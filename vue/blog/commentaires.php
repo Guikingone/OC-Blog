@@ -4,7 +4,7 @@ include 'inc/header.php';
 <div class="container">
   <div clas="row">
     <div class="col-xs-12">
-      <h2 class="text-center"><a href="blog.php">Retour à l'accueil</a></h2>
+      <p class="text-center"><a href="blog.php">Retour à l'accueil</a></p>
       <br/>
       <h3 class="text-center"><?php echo $billets['titre']; ?> <em>par <?php echo $billets['auteur']; ?></em></h3>
       <hr />
