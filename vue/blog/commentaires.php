@@ -12,10 +12,18 @@ include 'inc/header.php';
       <br/>
       <hr />
       <h3 class="text-center">Les commentaires :</h3>
+      <?php
+      foreach($commentaires as $commentaire){
+        ?>
+          <p class="text-center"><?php echo $commentaire['contenu']; ?></p>
+          <h4 class="text-center">Par <?php echo $commentaire['auteur']; ?></p>
+        <?php
+        }
+      ?>
       <h2 class="text-center">Ajouter un commentaire :</h2>
         <!-- Formulaire d'ajout de commentaires -->
         <div class="well">
-              <form method="post" action="#modele/send_commentaires.php">
+            <form method="post" action="modele/send_commentaires.php">
                 <div class="form-group">
                 <label>Votre Pseudo :</label>
                   <input type="text" name="auteur" class="form-control" />
@@ -31,7 +39,7 @@ include 'inc/header.php';
                 <div class="form-group">
                   <input type="submit" value="Commenter" class="btn btn-danger" />
                 </div>
-              </form>
+            </form>
         </div>
     </div>
   </div>
