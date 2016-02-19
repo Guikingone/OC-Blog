@@ -20,6 +20,9 @@
   				<a class="navbar-brand page-scroll" href="blog.php">Home</a>
   			</div>
   			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="admin.php">Administration</a></li>
+          </ul>
   			</div>
   	   </div>
   </nav>

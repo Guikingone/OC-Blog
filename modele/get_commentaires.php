@@ -1,5 +1,6 @@
 <?php
-function get_commentaires(){
+function get_commentaires()
+{
 
   global $bdd;
 
@@ -9,4 +10,14 @@ function get_commentaires(){
   $commentaires = $req->fetchAll();
 
   return $commentaires;
+}
+
+function send_commentaires()
+{
+  global $bdd;
+
+  $req = $bdd->prepare('INSERT INTO commentaires (auteur, contenu, date_publication, email, article_id) VALUES (?, ?, NOW(), ?)');
+  $req->execute(array($_POST['auteur'], $_POST['message'], $_POST['email'], $_GET['billet']));
+
+  return $req;
 }

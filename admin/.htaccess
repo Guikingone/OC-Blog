@@ -1,4 +1,0 @@
-AuthName "Page d'administration protégée"
-AuthType Basic
-AuthUserFile "localhost/OpenClassrooms/Projets/Premium Class/Blog/admin/.htpasswd"
-Require valid-user

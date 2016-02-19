@@ -23,7 +23,7 @@ include 'inc/header.php';
       <h2 class="text-center">Ajouter un commentaire :</h2>
         <!-- Formulaire d'ajout de commentaires -->
         <div class="well">
-            <form method="post" action="#controller/send_commentaires.php">
+            <form method="post" action="controller/commentaires.php">
                 <div class="form-group">
                 <label>Votre Pseudo :</label>
                   <input type="text" name="auteur" class="form-control" />
