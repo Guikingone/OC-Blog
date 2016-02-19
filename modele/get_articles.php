@@ -1,15 +1,12 @@
 <?php
-// On récupère les articles afin de les afficher sur la page d'accueil
-function get_articles($offset, $limit){
+/* On récupère les articles afin de les afficher sur la page d'accueil, on sélectionne le nombre d'articles à afficher
+via la variable $depart qui part de la page actuelle puis on limite avec $nbrArticlesPrPages afin de n'afficher que x articles par page */
+function get_articles($depart, $nbrArticlesPrPages){
 
   global $bdd;
-  $offset = (int) $offset;
-  $limit = (int) $limit;
 
   $req = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_publication
-  , \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation FROM article ORDER BY date_creation DESC LIMIT :offset, :limit');
-  $req->bindParam(':offset', $offset, PDO::PARAM_INT);
-  $req->bindParam(':limit', $limit, PDO::PARAM_INT);
+  , \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation FROM article ORDER BY date_creation DESC LIMIT ' . $depart . ',' . $nbrArticlesPrPages);
   $req->execute();
   $billets = $req->fetchAll();
 
@@ -29,12 +26,12 @@ function get_articles_by_id(){
   return $billetsID;
 }
 
-// On récupère le nombre d'articles dans la table puis on divise ce nombre par le nombre voulu d'article par page
+// On récupère le nombre d'articles dans la table afin de pouvoir paginer sur le controller billet
 function get_pagination(){
 
   global $bdd;
+  $req = $bdd->query('SELECT id FROM article');
+  $pagination = $req->rowCount();
 
-  $req = $bdd->prepare('SELECT COUNT(*) AS nb_articles FROM article');
-  $req->execute();
-  $pagination = $req->fetch();
+  return $pagination;
 }

@@ -1,6 +1,7 @@
 <?php
 include_once 'modele/get_commentaires.php';
 include_once 'modele/get_articles.php';
+
 $commentaires = get_commentaires();
 $billets = get_articles_by_id();
 

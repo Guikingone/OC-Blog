@@ -17,7 +17,7 @@ include 'inc/header.php';
               <textarea type="text" name="contenu" class="form-control"></textarea>
           </div>
           <div class="form-group">
-            <input type="submit" value="Envoyer" class="btn btn-success" />
+            <input type="submit" value="Ajouter" class="btn btn-success" />
           </div>
         </form>
       </div>

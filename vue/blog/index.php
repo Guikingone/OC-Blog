@@ -17,7 +17,7 @@ include 'inc/header.php';
             <!-- Affichage du contenu -->
             <p class="contenu"><?php echo $billet['contenu']; ?>
             <br />
-              <em><a href="commentaires.php?billet=<?php echo $billet['id']; ?>">Commenter</a></em>
+              <em><a href="commentaires.php?billet=<?php echo $billet['id']; ?>" class="btn btn-primary">Commenter</a></em>
             </p>
           </div>
           <?php
@@ -25,22 +25,17 @@ include 'inc/header.php';
           ?>
     </div>
   </div>
-  <br/>
+  <br />
   <div class="row">
     <div class="col-lg-12 text-center">
+      <!-- On boucle afin que l'affichage se fasse via des liens -->
       <?php
-      if(isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $nbPages){
-        $cPage = $_GET['page'];
-      }else{
-        $cPage = 0;
-      }
-
-      for($i = 0; $i<=$nbPages; $i++)
+      for($i = 1; $i <= $pagesTotale; $i++)
       {
-        if($i === $cPage){
+        if($i === $pageCourante){
           echo $i;
         }else{
-          echo '<a href="index.php?page=$i"' . $i . '</a>';
+          echo '<a href="?page=' . $i . '">' . $i .'</a>';
         }
       }
       ?>
