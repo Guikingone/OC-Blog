@@ -1,5 +1,5 @@
 <?php
-include 'inc/header.php';
+include '../inc/header.php';
 ?>
 <div class="container">
   <div class="col-lg-12">
@@ -43,5 +43,5 @@ include 'inc/header.php';
   </div>
 </div>
 <?php
-include 'inc/footer.php';
+include '../inc/footer.php';
 ?>

@@ -1,7 +1,13 @@
 <?php
+
+function send_articles()
+{
+
+}
 /* On récupère les articles afin de les afficher sur la page d'accueil, on sélectionne le nombre d'articles à afficher
 via la variable $depart qui part de la page actuelle puis on limite avec $nbrArticlesPrPages afin de n'afficher que x articles par page */
-function get_articles($depart, $nbrArticlesPrPages){
+function get_articles($depart, $nbrArticlesPrPages)
+{
 
   global $bdd;
 
@@ -14,7 +20,8 @@ function get_articles($depart, $nbrArticlesPrPages){
 }
 
 // On récupère les articles via leur ID afin d'en afficher le contenu dans la page de commentaires
-function get_articles_by_id(){
+function get_articles_by_id()
+{
 
   global $bdd;
 
@@ -27,7 +34,8 @@ function get_articles_by_id(){
 }
 
 // On récupère le nombre d'articles dans la table afin de pouvoir paginer sur le controller billet
-function get_pagination(){
+function get_pagination()
+{
 
   global $bdd;
   $req = $bdd->query('SELECT id FROM article');

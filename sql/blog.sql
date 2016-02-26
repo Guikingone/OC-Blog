@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 19 Février 2016 à 09:22
+-- Généré le :  Ven 26 Février 2016 à 16:16
 -- Version du serveur :  5.7.9
 -- Version de PHP :  5.6.16
 
@@ -62,7 +62,8 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
   `email` varchar(255) NOT NULL,
   `contenu` text NOT NULL,
   `date_publication` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_article_id` (`article_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

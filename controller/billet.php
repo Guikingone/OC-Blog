@@ -1,5 +1,6 @@
 <?php
 include_once 'modele/get_articles.php';
+
 $nbrArticlesPrPages = 5;
 $pagination = get_pagination();
 $pagesTotale = ceil($pagination / $nbrArticlesPrPages);

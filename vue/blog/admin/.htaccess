@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "localhost/OpenClassrooms/Premium%20Class/Projets/Blog/vue/blog/admin/.htpasswd"
+Require valid-user
