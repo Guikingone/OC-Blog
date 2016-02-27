@@ -1,5 +1,5 @@
 <?php
-include_once 'modele/get_articles.php';
+include_once ('modele/blog/get_articles.php');
 
 $nbrArticlesPrPages = 5;
 $pagination = get_pagination();
@@ -22,4 +22,4 @@ foreach($billets as $key => $billet){
     $billets[$key]['contenu'] = nl2br($billet['contenu']);
 }
 
-include_once 'vue/blog/index.php';
+include_once ('vue/blog/index.php');

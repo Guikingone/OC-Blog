@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 26 Février 2016 à 16:16
+-- Généré le :  Ven 26 Février 2016 à 16:36
 -- Version du serveur :  5.7.9
 -- Version de PHP :  5.6.16
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `date_publication` datetime NOT NULL,
   `auteur` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `article`
@@ -64,7 +64,15 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
   `date_publication` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_article_id` (`article_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `commentaires`
+--
+
+INSERT INTO `commentaires` (`id`, `article_id`, `auteur`, `email`, `contenu`, `date_publication`) VALUES
+(1, 1, 'Guikingone', 'guillaume.loulier@hotmail.fr', 'Ah, enfin un blog !', '2016-02-26 17:19:53'),
+(2, 6, 'Guikingone', 'guillaume.loulier@hotmail.fr', 'Voilà, on peut enfin commenter !', '2016-02-26 17:22:26');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,5 +1,4 @@
 <?php
-
 function send_articles()
 {
 
