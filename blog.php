@@ -1,8 +1,16 @@
 <?php
+require_once 'model/model.php';
+require_once 'controller/controllers.php';
 
-include_once('modele/Connexion_BDD.php');
-
-if(!isset($_GET['section']) OR $_GET['section'] === 'index')
-{
-  include_once('controller/blog/billet.php');
+// route the request internally
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+if ('/index.php' === $uri) {
+    list_action();
+} elseif ('/index.php/show' === $uri && isset($_GET['id'])) {
+    show_action($_GET['id']);
+} elseif ('/index.php/admin' === $uri){
+  
+} else {
+    header('Status: 404 Not Found');
+    echo '<html><body><h1>Page Not Found</h1></body></html>';
 }

@@ -35,8 +35,8 @@ function get_articles_by_id()
 // On récupère le nombre d'articles dans la table afin de pouvoir paginer sur le controller billet
 function get_pagination()
 {
-
   global $bdd;
+
   $req = $bdd->query('SELECT id FROM article');
   $pagination = $req->rowCount();
 

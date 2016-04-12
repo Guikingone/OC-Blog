@@ -1,6 +1,5 @@
 <?php
 include ('inc/header.php');
-include_once ('modele/blog/get_commentaires.php');
 ?>
 <div class="container">
   <div clas="row">
@@ -23,22 +22,37 @@ include_once ('modele/blog/get_commentaires.php');
       ?>
       <h2 class="text-center">Ajouter un commentaire :</h2>
         <!-- Formulaire d'ajout de commentaires -->
+        <?php
+          if(isset($_POST['submit'])){
+            $name = htmlspecialchars(trim($_POST['auteur']));
+            $email = htmlspecialchars(trim($_POST['email']));
+            $contenu = htmlspecialchars(trim($_POST['message']));
+            $errors = [];
+
+            if(empty($name) || empty($email) || empty($contenu)){
+              $errors['empty'] = "Tout les champs n'ont pas été remplis !";
+            }else{
+              comment($name, $email, $message);
+            }
+          }
+        ?>
         <div class="well">
-            <form method="post" action="controller/commentaires.php">
+            <form method="post">
                 <div class="form-group">
                 <label>Votre Pseudo :</label>
-                  <input type="text" name="auteur" class="form-control" />
+                  <input type="text" name="auteur" class="form-control" id="auteur" />
                 </div>
                 <div class="form-group">
                 <label>Votre email :</label>
-                  <input type="email" name="email" class="form-control" />
+                  <input type="email" name="email" class="form-control" id="email" />
                 </div>
                 <div class="form-group">
                 <label>Votre message :</label>
-                  <textarea type="text" name="message" class="form-control"></textarea>
+                  <textarea type="text" name="message" class="form-control" id="message"></textarea>
                 </div>
                 <div class="form-group">
                   <input type="submit" value="Commenter" class="btn btn-danger" />
+                  <input type="reset" value="Annuler" class="btn btn-warning" />
                 </div>
             </form>
         </div>

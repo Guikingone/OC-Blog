@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mon premier Blog</title>
+    <title><?php echo $title ?></title>
     <meta charset="utf-8">
     <link href="vue/blog/css/main.css" rel="stylesheet" />
     <link href="vue/blog/css/bootstrap.css" rel="stylesheet" />
@@ -26,3 +26,8 @@
   			</div>
   	   </div>
   </nav>
+  <?php echo $content ?>
+  <script src="vue/blog/js/jquery.js"></script>
+  <script src="vue/blog/js/bootstrap.js"></script>
+</body>
+</html>

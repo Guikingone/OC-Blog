@@ -1,4 +1,5 @@
 <?php
+
 function get_commentaires()
 {
   global $bdd;
@@ -11,10 +12,11 @@ function get_commentaires()
   return $commentaires;
 }
 
-function send_commentaires($name, $email, $message)
+function comment($name, $email, $message)
 {
-  global $bdd;
 
+  global $bdd;
+  
   $commentaire = [
     'name' => $name,
     'email' => $email,
