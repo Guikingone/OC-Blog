@@ -1,5 +1,5 @@
 <?php
-require_once 'model.php';
+require_once 'modele/model.php';
 
 $post = get_articles_by_id($_GET['id']);
 
